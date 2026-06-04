@@ -149,8 +149,10 @@ public class TicketCancel extends javax.swing.JFrame {
         DefaultComboBoxModel<String> tmp1=(DefaultComboBoxModel)mavehuy.getModel();
         tmp1.removeAllElements();
         for(Ticket i:TB.tk_list){
-            String tmp=i.getTicketNumber();
-            tmp1.addElement(tmp);
+            if(!i.getStatus().equals("ĐÃ HỦY")){
+                String tmp=i.getTicketNumber();
+                tmp1.addElement(tmp);
+            }
         }
     }
   

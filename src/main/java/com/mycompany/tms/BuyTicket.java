@@ -379,7 +379,7 @@ public class BuyTicket extends javax.swing.JFrame {
             b.info6.setText("- SỐ ĐIỆN THOẠI: " + p.getTelnumber());
             b.info8.setText("- CHUYẾN TÀU SỐ: "+sotau.getSelectedItem().toString());
             b.info9.setText("- TOA: " + sotoa.getSelectedItem().toString());
-            b.info10.setText("- GHE: " + soghe.getSelectedItem().toString());
+            b.info10.setText("- GHẾ: " + soghe.getSelectedItem().toString());
             b.info11.setText("- GIÁ VÉ: "+x.getTicketPrice()+" VND");
             b.setVisible(true);
             this.dispose();

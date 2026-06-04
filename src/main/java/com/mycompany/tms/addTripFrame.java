@@ -4,6 +4,7 @@
  */
 package com.mycompany.tms;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -15,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class addTripFrame extends javax.swing.JFrame {
     private Trip x;
+    
     /**
      * Creates new form addTripFrame
      */
@@ -213,10 +215,31 @@ public class addTripFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        x=new Trip(gakh.getText(),gakt.getText(),gkh.getText(),gkt.getText(),Integer.parseInt(sotoa.getText()),Integer.parseInt(soghe.getText()));
-        JOptionPane.showMessageDialog(null,"THÊM CHUYẾN THÀNH CÔNG","",JOptionPane.INFORMATION_MESSAGE);
-        TB.t_list.add(x);
-        TripInfo.addTripRow();
+        int check=0;
+        int check1=0;
+        SimpleDateFormat ngaykh= new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat giokh=new SimpleDateFormat("hh:mm");
+        try{
+            ngaykh.parse(gkh.getText());
+        }
+        catch (Exception e){
+            check=1;
+        }
+        try{
+            giokh.parse(gkt.getText());
+        }
+        catch (Exception e){
+            check1=1;
+        }
+        if(check==1&&check1==1) JOptionPane.showMessageDialog(null,"VUI LÒNG NHẬP ĐÚNG ĐỊNH DẠNG NGÀY VÀ GIỜ KHỞI HÀNH","",JOptionPane.ERROR_MESSAGE);
+        else if(check==1) JOptionPane.showMessageDialog(null,"VUI LÒNG NHẬP ĐÚNG ĐỊNH DẠNG NGÀY KHỞI HÀNH","",JOptionPane.ERROR_MESSAGE);
+        else if(check1==1) JOptionPane.showMessageDialog(null,"VUI LÒNG NHẬP ĐÚNG ĐỊNH DẠNG GIỜ KHỞI HÀNH","",JOptionPane.ERROR_MESSAGE);
+        if(check==0&&check1==0){
+            x=new Trip(gakh.getText(),gakt.getText(),gkh.getText(),gkt.getText(),Integer.parseInt(sotoa.getText()),Integer.parseInt(soghe.getText()));
+            JOptionPane.showMessageDialog(null,"THÊM CHUYẾN THÀNH CÔNG","",JOptionPane.INFORMATION_MESSAGE);
+            TB.t_list.add(x);
+            TripInfo.addTripRow();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
     private void sotoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sotoaActionPerformed
         // TODO add your handling code here:
@@ -245,7 +268,7 @@ public class addTripFrame extends javax.swing.JFrame {
 
     private void gkhKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gkhKeyTyped
         // TODO add your handling code here:
-        if(gkh.getText().equals("ĐỊnh dạng dd/MM/yyyy")) gkh.setText("");
+        if(gkh.getText().equals("Định dạng dd/MM/yyyy")) gkh.setText("");
     }//GEN-LAST:event_gkhKeyTyped
 
     private void gkhKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gkhKeyPressed
@@ -258,7 +281,7 @@ public class addTripFrame extends javax.swing.JFrame {
 
     private void gktKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gktKeyTyped
         // TODO add your handling code here:
-        if(gkt.getText().equals("ĐỊnh dạng hh:mm")) gkt.setText("");
+        if(gkt.getText().equals("Định dạng hh:mm")) gkt.setText("");
     }//GEN-LAST:event_gktKeyTyped
 
     /**

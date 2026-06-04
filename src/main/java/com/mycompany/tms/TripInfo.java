@@ -139,7 +139,7 @@ public class TripInfo extends javax.swing.JFrame {
 
     private void editTripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editTripActionPerformed
         // TODO add your handling code here:
-        new CheckPass().setVisible(true);
+        new AdminFrame().setVisible(true);
         
     }//GEN-LAST:event_editTripActionPerformed
 

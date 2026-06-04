@@ -23,12 +23,10 @@ public class Wallet {
         this.balance = balance;
     }
 
-    // Phương thức nạp tiền
     public void Deposit(int deposit){
         this.balance += deposit;
     }
 
-    // Phương thức rút tiền
     public void Withdraw(int withdraw){
         if(balance > 0){
             this.balance -= withdraw;

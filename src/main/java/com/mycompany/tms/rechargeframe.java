@@ -109,7 +109,6 @@ public class rechargeframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(sotiennap.getText().equals("")) JOptionPane.showMessageDialog(null,"VUI LÒNG NHẬP SỐ TIỀN CẦN NẠP","",JOptionPane.INFORMATION_MESSAGE);
         int x=Integer.parseInt(sotiennap.getText());
-        
         TB.w.Deposit(x);
         JOptionPane.showMessageDialog(null,"ĐÃ NẠP "+x+" VND VÀO TÀI KHOẢN\nNHẤN REFRESH ĐỂ CẬP NHẬT SỐ DƯ","",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addMoneyActionPerformed

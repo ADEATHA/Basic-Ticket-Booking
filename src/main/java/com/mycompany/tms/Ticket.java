@@ -74,7 +74,6 @@ public class Ticket {
         this.status = status;
     }
 
-    // Giảm giá theo độ tuổi và vai trò
     public void Promotion(Passenger p){
         if(p.getAge() > 0 && p.getAge() <= 10){
             ticketPrice -= (ticketPrice * 25) / 100;

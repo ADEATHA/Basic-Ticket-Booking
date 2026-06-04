@@ -12,6 +12,7 @@ import java.util.Scanner;
  *
  * @author Cuong
  */
+
 public class TB {
     public static ArrayList<Passenger> p_list = new ArrayList<>();
     public static ArrayList<Trip> t_list= new ArrayList<>();

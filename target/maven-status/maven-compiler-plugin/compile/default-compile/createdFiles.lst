@@ -54,7 +54,6 @@ com\mycompany\tms\rechargeframe.class
 com\mycompany\tms\TicketInfoFrame.class
 com\mycompany\tms\addTripFrame$6.class
 com\mycompany\tms\delTripFrame$4.class
-com\mycompany\tms\Bill.class
 com\mycompany\tms\AdminFrame$2.class
 com\mycompany\tms\BuyTicket$14.class
 com\mycompany\tms\TicketPay$1.class

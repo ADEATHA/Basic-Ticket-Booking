@@ -30,8 +30,8 @@ public class CheckPass extends javax.swing.JFrame {
 
         panel1 = new java.awt.Panel();
         adminpass = new javax.swing.JLabel();
-        passAdmin = new javax.swing.JTextField();
         checkpass = new javax.swing.JButton();
+        passAdmin = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,28 +55,28 @@ public class CheckPass extends javax.swing.JFrame {
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Layout.createSequentialGroup()
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(passAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(adminpass)
                 .addGap(75, 75, 75))
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(checkpass, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(passAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(adminpass)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(passAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(checkpass)
                 .addGap(19, 19, 19))
         );
@@ -98,7 +98,7 @@ public class CheckPass extends javax.swing.JFrame {
 
     private void checkpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkpassActionPerformed
         // TODO add your handling code here:
-        if(passAdmin.getText().equals("123")){
+        if(String.valueOf(passAdmin.getPassword()).equals("123")){
             new AdminFrame().setVisible(true);
             this.dispose();
         }
@@ -147,6 +147,6 @@ public class CheckPass extends javax.swing.JFrame {
     private javax.swing.JLabel adminpass;
     private javax.swing.JButton checkpass;
     private java.awt.Panel panel1;
-    private javax.swing.JTextField passAdmin;
+    private javax.swing.JPasswordField passAdmin;
     // End of variables declaration//GEN-END:variables
 }

@@ -129,11 +129,12 @@ public class TicketPay extends javax.swing.JFrame {
         for(Ticket i:TB.tk_list){
             if(mavemua.getSelectedItem().equals(i.getTicketNumber())){
                 if(i.getTicketPrice()>TB.w.getBalance()) JOptionPane.showMessageDialog(null,"SỐ DƯ TÀI KHOẢN KHÔNG ĐỦ\n VUI LÒNG NẠP THÊM TIỀN","",JOptionPane.ERROR_MESSAGE); 
-                else{
-                    JOptionPane.showMessageDialog(null,"THANH TOÁN THÀNH CÔNG","",JOptionPane.INFORMATION_MESSAGE);
-                    i.setStatus("ĐÃ THANH TOÁN");
-                    TB.w.Withdraw(i.getTicketPrice());
+                    else{
+                        JOptionPane.showMessageDialog(null,"THANH TOÁN THÀNH CÔNG","",JOptionPane.INFORMATION_MESSAGE);
+                        i.setStatus("ĐÃ THANH TOÁN");
+                        TB.w.Withdraw(i.getTicketPrice());
                 }
+                break;
             }
         }  
         addTicketBox1();
@@ -142,8 +143,10 @@ public class TicketPay extends javax.swing.JFrame {
         DefaultComboBoxModel<String> tmp1=(DefaultComboBoxModel)mavemua.getModel();
         tmp1.removeAllElements();
         for(Ticket i:TB.tk_list){
-            String tmp=i.getTicketNumber();
-            tmp1.addElement(tmp);
+            if(i.getStatus().equals("CHƯA THANH TOÁN")){
+                String tmp=i.getTicketNumber();
+                tmp1.addElement(tmp);
+            }
         }
     }
     /**

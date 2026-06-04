@@ -34,5 +34,4 @@ Du an la ung dung desktop su dung Java Swing. Cac man hinh (frame) doc lap de mo
 ## Dong gop
 Pull request va issue deu duoc chao don.
 
-## License
-Chua khai bao.
+
